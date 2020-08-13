@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="js/questions.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/scripts.js"></script>
+    <div class="quizBackground">
+    <div class="fullpage black-bg centered">
+        <div class="container start">
+            <h1 id="questionaire-title">What's your Digital Diplomat</h1>
+
+            <div id="questionaire-info" style="text-align:center;">
+                <div style=" float:left; display:inline; width: 20%;">
+                <img src="../../assets/quizAssets/joe.gif" width="250" height="300">
+                </div>
+                <div style="display:inline;  width: 20%;">
+                <p style="background:black; display:inline; float:right; width: 60%;">Heya - I'm Joe! I'm here to help you find out what diplomatic role you'd be best for. Please remember that this is just a guide. Trust your personal judgment, not solely the results of this little journey we're going to go on.
+                </p>
+            </div>
+            </div>
+
+            <div class="centered">
+                <div class="button" onclick="showPage(2); setupQuestion();">
+                    <p>START</p>
+                </div>
+            </div>
+        </div>
+        <div id="light-black-window" class="container hidden">
+            <h1 id="personality-type"></h1>
+
+            <!--Image of diplomat-->
+
+            <div id="myImg" class="centered"></div>
+            <h4 class="silver" id="myHighestTrait"> </h4>
+            <h4 class="silver">Read about your results below and visit your respective diplomat(s) in our digital diplomat museum to learn more about the position(s) you're best suited for!</h4>
+            <h4 class="silver">Oh - and just incase you didn't know - FSO, FSS, and CSO are abbreviations for Foreign Service Officer, Foreign Service Specialist, and Civil Service Officer respectively!</h4>
+
+            <h5 class="silver" >And of course - here's a bit about your suitability for all Officer Tracks... </h5>
+            <div id="result-info">
+            <h2 class="blue"> In the Foreign Service Officer (FSO) track, your results are </h2>
+            <div class="blue" id="fso" style="display: none">
+            <div id="option0-items">
+                <h4 class="blue" id="option0-title"> 
+                    Trait
+                </h4>
+                <h5 id="option0-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option0-bar" class="option-bar">
+                     <div id="option0-progress" class="option-progress blue-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option0-info1> </p>
+                <p class="small-text" id=option0-info2> </p>
+            </div>
+            <br>
+            <div id="option1-items">
+                <h4 class="blue" id="option1-title"> 
+                    Trait
+                </h4>
+                <h5 id="option1-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option1-bar" class="option-bar">
+                     <div id="option1-progress" class="option-progress blue-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option1-info1> </p>
+                <p class="small-text" id=option1-info2> </p>
+            </div>
+            <br>
+            <div id="option2-items">
+                <h4 class="blue" id="option2-title"> 
+                    Trait
+                </h4>
+                <h5 id="option2-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option2-bar" class="option-bar">
+                     <div id="option2-progress" class="option-progress blue-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option2-info1> </p>
+                <p class="small-text" id=option2-info2> </p>
+            </div>
+            <br>
+            <div id="option3-items">
+                <h4 class="blue" id="option3-title"> 
+                    Trait
+                </h4>
+                <h5 id="option3-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option3-bar" class="option-bar">
+                     <div id="option3-progress" class="option-progress blue-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option3-info1> </p>
+                <p class="small-text" id=option3-info2> </p>
+            </div>
+             <div id="option4-items">
+                <h4 class="blue" id="option4-title"> 
+                    Trait
+                </h4>
+                <h5 id="option4-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option4-bar" class="option-bar">
+                     <div id="option4-progress" class="option-progress blue-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option4-info1> </p>
+                <p class="small-text" id=option4-info2> </p>
+            </div>
+        </div>
+             <input class="button" type="button" value="Toggle FSO" style="border-color: #78a3ff; color:#78a3ff;" onclick="setVisible('fso');"/>
+            <br>
+            <h2 style="color:#CC0033"> In the Foreign Service Specialst (FSS) Track, your results are</h2>
+            <div id="fss" style="display: none">
+            <div id="option5-items">
+                <h4 class="red" id="option5-title"> 
+                    Trait
+                </h4>
+                <h5 id="option5-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option5-bar" class="option-bar">
+                     <div id="option5-progress" class="option-progress red-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option5-info1> </p>
+                <p class="small-text" id=option5-info2> </p>
+            </div>
+            <br>
+            <div id="option6-items">
+                <h4 class="red" id="option6-title"> 
+                    Trait
+                </h4>
+                <h5 id="option6-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option6-bar" class="option-bar">
+                     <div id="option6-progress" class="option-progress red-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option6-info1> </p>
+                <p class="small-text" id=option6-info2> </p>
+            </div>
+            <br>
+            <div id="option7-items">
+                <h4 class="red" id="option7-title"> 
+                    Trait
+                </h4>
+                <h5 id="option7-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option7-bar" class="option-bar">
+                     <div id="option7-progress" class="option-progress red-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option7-info1> </p>
+                <p class="small-text" id=option7-info2> </p>
+            </div>
+            <br>
+            <div id="option8-items">
+                <h4 class="red" id="option8-title"> 
+                    Trait
+                </h4>
+                <h5 id="option8-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option8-bar" class="option-bar">
+                     <div id="option8-progress" class="option-progress red-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option8-info1> </p>
+                <p class="small-text" id=option8-info2> </p>
+            </div>
+            <br>
+            <div id="option9-items">
+                <h4 class="red" id="option9-title"> 
+                    Trait
+                </h4>
+                <h5 id="option9-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option9-bar" class="option-bar">
+                     <div id="option9-progress" class="option-progress red-bar">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option9-info1> </p>
+                <p class="small-text" id=option9-info2> </p>
+            </div>
+        </div>
+         <input class="button" type="button" style="border-color: #CC0033; color:#CC0033;" value="Toggle FSS" onclick="setVisible('fss');"/>
+            <br>
+            <div id="civil-service-intro">
+            <h2 style="color: #ceab82;">In the Civil Service Officer (CSO) Track, your results are</h2>
+            </div>
+
+            <div id="civil-service" style="display: none">
+            <div id="option10-items">
+                <h4 class="gold" id="option10-title"> 
+                    Trait
+                </h4>
+                <h5 id="option10-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option10-bar" class="option-bar">
+                     <div id="option10-progress" class="option-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option10-info1> </p>
+                <p class="small-text" id=option10-info2> </p>
+            </div>
+            <br>
+            <div id="option11-items">
+                <h4 class="gold" id="option11-title"> 
+                    Trait
+                </h4>
+                <h5 id="option11-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option11-bar" class="option-bar">
+                     <div id="option11-progress" class="option-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option11-info1> </p>
+                <p class="small-text" id=option11-info2> </p>
+            </div>
+            <br>
+            <div id="option12-items">
+                <h4 class="gold" id="option12-title"> 
+                    Trait
+                </h4>
+                <h5 id="option12-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option12-bar" class="option-bar">
+                     <div id="option12-progress" class="option-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option12-info1> </p>
+                <p class="small-text" id=option12-info2> </p>
+            </div>
+            <br>
+            <div id="option13-items">
+                <h4 class="gold" id="option13-title"> 
+                    Trait
+                </h4>
+                <h5 id="option13-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option13-bar" class="option-bar">
+                     <div id="option13-progress" class="option-progress">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option13-info1> </p>
+                <p class="small-text" id=option13-info2> </p>
+            </div>
+            <br>
+            <div id="option14-items">
+                <h4 class="gold" id="option14-title"> 
+                    Trait
+                </h4>
+                <h5 id="option14-suitability"> 
+                    Your suitability
+                </h5>
+                <div id="option14-bar" class="option-bar">
+                     <div id="option14-progress" class="option-progress ">(progress bar in trait)</div>
+                </div>
+                <p class="small-text" id=option14-info1> </p>
+                <p class="small-text" id=option14-info2> </p>
+            </div>
+        </div>
+        <input class="button" type="button" value="Toggle CSO" style="border-color: #ceab82; color:#ceab82;" onclick="setVisible('civil-service');"/>
+            <br>
+
+
+        </div>
+            <br>
+            <br>
+            <div class="centered">
+                <div class="button" onclick="showPage(0); setupQuestion();">
+                    <p>RETRY</p>
+                </div>
+            </div>
+        </div>
+        <div class="container hidden">
+            <div id="progress-bar">
+                <div id="progress">1/5</div>
+            </div>
+            <h4 id="question"></h4>
+            <div class="option" id="option0" onclick="select(this)">
+                <input type="radio" name="answer" value="0" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option1" onclick="select(this)">
+                <input type="radio" name="answer" value="1" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option2" onclick="select(this)">
+                <input type="radio" name="answer" value="2" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option3" onclick="select(this)">
+                <input type="radio" name="answer" value="3" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+            <div class="option" id="option4" onclick="select(this)">
+                <input type="radio" name="answer" value="4" onchange="next()">
+                <div class="content centered">
+                </div>
+                <br>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

@@ -1,7 +1,13 @@
-  function linkPanoRooms (panorama1, panorama2, vect1, vect2, size) {
-    panorama1.linkWtMenuChange(panorama2, vect1, size); //img can be second param here
-      //link pano2 to main room
-    panorama2.linkWtMenuChange(panorama1, vect2, size);
+  function linkPanoRooms (panorama1, panorama2, vect1, vect2, size, room1Name, room2Name, img1, img2) {
+    linkPanoInfoSpot(vect1, true, room2Name, panorama1, true)
+    linkPanoInfoSpot(vect2, true, room1Name, panorama2, true)
+    panorama1.linkWtMenuChange(panorama2, vect1, size, img1); //img can be second param here
+    
+    //link pano2 to main room
+    panorama2.linkWtMenuChange(panorama1, vect2, size, img2);
+
+
+
   }
 
   function addToNavBar(hoverText, infospot, panoramaRoom) {
@@ -30,9 +36,12 @@
     }
   }
 
-  function linkPanoInfoSpotWtInfo(vect, divContainer, isAddToNavBar, panoramaRoom, hoverText, image) {
-    // sizing s.t. further away appears smaller
-    infoSpotSize = baseScale * vect.length() / radius;
+  function linkPanoInfoSpotWtInfo(vect, divContainer, isAddToNavBar, panoramaRoom, hoverText, image, infoSpotSize=undefined ) {
+    if (infoSpotSize == undefined) {
+      // sizing s.t. further away appears smaller
+      infoSpotSize = baseScale * vect.length() / radius;
+    }
+    
     // add infospot with info that pops up in same room
     infospot2 = new PANOLENS.Infospot( infoSpotSize, image);
     infospot2.position.copy(vect);
@@ -46,10 +55,34 @@
     }
   }
 
+  function addInfoSpotFunc(item, _) {
+    linkPanoInfoSpotWtInfo (new THREE.Vector3(item.positionVector[0], item.positionVector[1], item.positionVector[2]), item.container, item.displayOnNavbar, item.panoramaRoom, item.title, item.image);
+  }
+
 
   function onFocus () {
     this.focus( parameters.duration, TWEEN.Easing[ parameters.curve ][ parameters.easing ] );
   }
+
+
+/* Swaps divs with click from mainDivStr+initialNum to mainDivStr+NextNum*/
+  function SwapDivsWithClick(mainDivStr, initialNum, NextNum)
+  {
+     d1 = document.getElementById(mainDivStr + initialNum);
+     d2 = document.getElementById(mainDivStr + NextNum);
+     if( d2.style.display == "none" )
+     {
+        d1.style.display = "none";
+        d2.style.display = "block";
+     }
+     else
+     {
+        d1.style.display = "block";
+        d2.style.display = "none";
+     }
+  }
+
+
 
 
   function addScenes() {

@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    background-color: rgba(255,255,255,0.1);
+    background-image: url("../../../assets/quizAssets/flagBackdrop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h2,
+#progress-bar #progress,
+label,
+p,
+h5
+{
+    font-family: 'ITC Avant Garde Gothic Book';
+    color: white;
+}
+
+h1 {
+    margin-block-end: 0.0em;
+}
+
+h1, h4 {
+    font-family: 'Archivo Regular';
+    color: #ceab82;
+}
+
+
+.silver{
+    color:silver;
+} 
+.blue {
+    color:#4782ff;
+}
+.red {
+    color:#CC0033;
+}
+.gold {
+    color:#ceab82;
+}
+
+.fullpage {
+    height: auto;
+    width: auto;
+}
+
+.black-bg {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizBackground {
+    margin: 0;
+    background-image: url("../../../assets/quizAssets/flagBackdrop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    height: auto;
+    width: auto;
+    max-width: 700px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5);
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+#questionaire-title {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+#questionaire-info {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    font-size: 18px;
+    overflow-y: scroll;
+    height: 20%;
+}
+
+#result-info {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    overflow-y: scroll;
+    height: 20%;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    cursor: pointer;
+    padding: 0px 20px;
+    border: 2px solid #ceab82;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    background-color: transparent;
+    color:#ceab82;
+}
+
+.button:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+#progress-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+#progress {
+    width: 20%;
+    text-align: right;
+    border-bottom: 2px solid #ceab82;
+    margin-bottom: -2px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    height: 8%;
+    margin-top: 10px;
+    padding: 2.5px;
+}
+
+.option:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.content {
+    margin-left: 10px;
+    height: 100%;
+}
+
+.content img {
+    max-height: 100%;
+}
+
+.img-center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
+.small-text {
+    font-size: small;
+}
+/* results */
+
+.option-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+.option-progress {
+    width: 10%;
+    text-align: right;
+    border-bottom: 2px solid #ceab82;
+    margin-bottom: -2px;
+    color: white;
+}
+.blue-bar {
+    border-bottom: 2px solid #4782ff;
+}
+.red-bar {
+    border-bottom: 2px solid #CC0033;
+}
+
+
+
+

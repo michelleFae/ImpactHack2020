@@ -19,7 +19,8 @@ html, body {
   height: 100%;
   box-sizing: border-box;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: rgba(28,28,28,0.9);
+  background-image: linear-gradient(180deg,#bac2c9, #bac2c9, #ffe6e3);
 }
 
 .container .right {
@@ -66,13 +67,13 @@ html, body {
 
 
 header.mdl-layout__header {
-  background-color: rgb(204, 14, 93);
+  background-color: #002744;
   text-align: center;
 }
 
 
 button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
-  background-color: rgb(204, 14, 93);
+  background-color: #6c0d00;
   color:white;
 }
 
@@ -85,33 +86,234 @@ button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored {
     width: 100%;
   }
 }
+/* sharing icons */
+/* container */
 
+#share {
+    width: 100%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* buttons */
+
+#share a {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 8px;
+    border-radius: 20%;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0.75;
+    transition: opacity 0.15s linear;
+}
+
+#share a:hover {
+    opacity: 1;
+}
+
+/* icons */
+
+#share i {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* colors */
+
+.facebook {
+   
+    background-image: url("https://image.flaticon.com/icons/svg/124/124010.svg");
+}
+
+.twitter {
+     background-image: url("https://image.flaticon.com/icons/svg/733/733579.svg");
+}
 
 /* Infospot popups */
 
- #FSO-container, #desc-container {
-    max-width: 500px;
-    max-height: 500px;
+.generalQuiz {
+    height: 60%;
+    width: 60%;
     min-width: 200px;
     min-height: 250px;
-    background: #fff;
-    color: #000;
+    background: #000;
+    color: #FFF;
     border-radius: 3px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    border: tan;
+border-style: double;
+}
+
+.generalQuiz > iframe {
+    border: none;
+    width:100%;
+    height: 100%;
   }
 
-  #FSO-container, #desc-container > iframe {
+.dimensionsFrame {
+    height: 55%;
+    width: 60%;
+    min-width: 200px;
+    min-height: 250px;
+    background: #000;
+    color: #FFF;
+    border-radius: 3px;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    border: tan;
+border-style: double;
+}
+
+.dimensionsFrame > iframe {
+    border: none;
+    width:100%;
+    height: 100%;
+  }
+
+iframe {
+    border: none;
+    width:100%;
+    height: 100%;
+  }
+
+.shareDiv {
+    width: 300px;
+    background: #000;
+    color: #FFF;
+    border-radius: 3px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    border: tan;
+border-style: double;
+  }
+
+.generalDialogue {
+    width: 500px;
+    background: #000;
+    color: #FFF;
+    border-radius: 3px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+.generalDialogue > iframe {
     border: none;
     width:100%;
   }
 
-  .title {
-    font-size: 1.5em;
-    text-align: center;
-    padding: 5px;
+
+.generalDialogue > iframe {
+    border: none;
+    width:100%;
   }
 
-  .text {
-    padding: 0 20px 20px 20px;
+.wheelInfo {
+    width: 500px;
+    background: #000;
+    color: #FFF;
+    border-radius: 3px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    border: tan;
+border-style: double;
   }
+
+.wheel {
+    width: 500px;
+    height:700px;
+    background: #000;
+    color: #FFF;
+    border-radius: 3px;
+    overflow-y: visible;
+    border: tan;
+border-style: double;
+  }
+
+.wheel > iframe {
+    border: none;
+    width:100%;
+    height: 100%;
+  }
+
+.title {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 5px;
+  background-color: black;
+  color:white;
+}
+
+.text {
+  padding: 0 20px 20px 20px;
+  color:white;
+}
+
+
+
+  /* Next and prev buttons */
+
+button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  
+}
+
+button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #bac2c9;
+  color: black;
+}
+
+.next {
+  background-color: #6c0d00;
+  color: white;
+}
+
+.blue {
+  background-color: #002744;
+  color: white;
+}
+
+.gold {
+  background-color: #ceab82;
+  color: white;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.greyColorText {
+  color:#bac2c9;
+}
+.redColorText {
+  color:#6c0d00;
+}
+.blueColorText {
+  color:#002744;
+}
+.tanColorText {
+  color:#ceab82;
+}
+.tanHighlight {
+  background-color: #ceab82;
+}
+.whiteHighlight{
+  background-color: #FFFFFF;
+}
+
+.pinkHighlight{
+  background-color: #ffe2e0;
+}
+.blueHighlight{
+  background-color: #c2defc;
+}
