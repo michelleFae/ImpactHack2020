@@ -167,7 +167,7 @@ const questions = {
   },
     question4: {
    	numOptions: 3,	
-    question: "How would you assess your reseach and writing skills?",
+    question: "How would you assess your research and writing skills?",
     option0: {
       type: "string",
       content: "I have top-notch reseach and writing skills!",

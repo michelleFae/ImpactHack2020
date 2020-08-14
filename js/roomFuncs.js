@@ -1,8 +1,7 @@
   function linkPanoRooms (panorama1, panorama2, vect1, vect2, size, room1Name, room2Name, img1, img2) {
-    linkPanoInfoSpot(vect1, true, room2Name, panorama1, true)
-    linkPanoInfoSpot(vect2, true, room1Name, panorama2, true)
-    panorama1.linkWtMenuChange(panorama2, vect1, size, img1); //img can be second param here
-    
+    linkPanoInfoSpot(vect1, true, room2Name, panorama1, true, 1)
+    linkPanoInfoSpot(vect2, true, room1Name, panorama2, true, 1)
+    panorama1.linkWtMenuChange(panorama2, vect1, size, img1);
     //link pano2 to main room
     panorama2.linkWtMenuChange(panorama1, vect2, size, img2);
 
@@ -19,9 +18,8 @@
   }
 
 
-  function linkPanoInfoSpot (vect, isAnimated, hoverText, panoramaRoom, isAddToNavBar) {
+  function linkPanoInfoSpot (vect, isAnimated, hoverText, panoramaRoom, isAddToNavBar, infoSpotSize=baseScale * vect.length() / radius) {
     // sizing s.t. further away appears smaller
-    infoSpotSize = baseScale * vect.length() / radius;
 
     // Create info spot and add to sidebar
     infospot = new PANOLENS.Infospot( infoSpotSize, PANOLENS.DataImage.Info, isAnimated);
@@ -91,7 +89,7 @@
 
     //viewer config: https://pchen66.github.io/Panolens/docs/index.html
     viewer = new PANOLENS.Viewer( { output: 'console', container: document.querySelector( '#pcontainer' ), autoHideInfospot: false, cameraFov: 90} );
-    viewer.add(blackRoom, whiteRoom,redRoom, blueRoom); //todo: MANUALLY ADD NEW SCENES HERE RN // NEED TO MAKE FUNC S.T. ITS NOT MANUAL
+    viewer.add(blackRoom, whiteRoom,redRoom, blueRoom); //todo: MANUALLY ADD NEW SCENES HERE
     viewer.renderer.sortObjects = true;
     
   }
